@@ -26,13 +26,13 @@ class InitManager {
       }
     }
   }
-
+  // 将配置信息挂载到全局
   static loadConfig(path = '') {
     const configPath = path || process.cwd() + '/config/config.js'
     const config = require(configPath)
     global.config = config
   }
-
+  // 将异常处理挂载到全局
   static loadHttpException() {
     const errors = require('./http-exception')
     global.errs = errors
